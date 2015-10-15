@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script src="js/libs/jquery/dist/jquery.js"></script>
+    <script src="js/libs/underscore/underscore.js"></script>
+    <script src="js/libs/backbone/backbone.js"></script>
+    <script src="js/libs/requirejs/require.js" data-main="js/main.js"></script>
+</head>
+<body>
+<header>
+    <div id="search_container"></div>
+    <script type="text/template" id="login">
+        <% userId %>
+        <% if (user){%>
+        <div class="login">
+            <a href="" onclick="$('<form method=POST action=/logout>').submit();return false">Exit</a></div>
+        <% }else{%>
+        <div class="login"><a href="/#registration">Sing Up</a></div>
+        <div class="login"><a href="/#login">Sing In</a></div>
+        <% } %>
+    </script>
+    <script src="js/views/index.js" type="text/javascript"></script>
+</header>
+<div class="container">
+    <div class="menu">
+        <a href="/">Main</a> |
+        <a href="/#users">Users</a> |
+        <a href="/#posts">Posts</a>
+        <script type="text/template" id="chat">
+            <% if(user){ %>
+            |<a href="../chat">Chat</a>
+            <% } %>
+        </script>
+    </div>
+    <div class="content" >
+
+        <div class="menu_left">
+            <ul>
+                <li><a href="../">My page</a></li>
+                <li><a href="#">My Messages</a></li>
+                <li><a href="#">My photo</a></li>
+            </ul>
+        </div>
+
+
+        <div id="content_center">
+
+            <div id="contentHolder">
+
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<footer>
+        <a href="../contact">Contact</a> |
+        <a href="../about">About</a>
+</footer>
+</body>
+</html>
